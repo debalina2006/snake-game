@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+    <div class="grid-background"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">SNAKE GAME</h1>
+            <div class="toggle-container">
+                <input type="checkbox" id="theme-toggle" class="toggle-checkbox">
+                <label for="theme-toggle" class="toggle-label"></label>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <canvas id="game-canvas"></canvas>
+
+            <div class="score-display">
+                Score: <span class="score-value" id="score">0</span>
+            </div>
+
+            <button class="pause-btn" id="pause-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+                </svg>
+            </button>
+
+            <div class="controls">
+                <button class="control-btn" id="restart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-controls">
+                <button class="mobile-btn mobile-btn-up" id="up-btn">↑</button>
+                <div class="mobile-btn-row">
+                    <button class="mobile-btn" id="left-btn">←</button>
+                    <button class="mobile-btn" id="down-btn">↓</button>
+                    <button class="mobile-btn" id="right-btn">→</button>
+                </div>
+            </div>
+
+            <div class="game-overlay" id="start-screen">
+                <div class="menu-panel pulse-effect">
+                    <h2 class="menu-title">NEON SNAKE</h2>
+                    <p>Navigate the cyberpunk grid and consume digital energy</p>
+                    <button class="btn" id="play-btn">PLAY</button>
+                    <button class="btn btn-secondary" id="high-scores-btn">HIGH SCORES</button>
+                </div>
+            </div>
+
+            <div class="game-overlay hidden" id="pause-screen">
+                <div class="menu-panel">
+                    <h2 class="menu-title">PAUSED</h2>
+                    <button class="btn" id="resume-btn">RESUME</button>
+                    <button class="btn btn-secondary" id="quit-btn">QUIT</button>
+                </div>
+            </div>
+
+            <div class="game-overlay hidden" id="game-over-screen">
+                <div class="menu-panel game-over-panel">
+                    <h2 class="menu-title">GAME OVER</h2>
+                    <div class="game-over-score" id="final-score">0</div>
+                    <button class="btn" id="play-again-btn">PLAY AGAIN</button>
+                    <button class="btn btn-secondary" id="main-menu-btn">MAIN MENU</button>
+                </div>
+            </div>
+
+            <div class="game-overlay hidden" id="high-scores-screen">
+                <div class="menu-panel">
+                    <h2 class="menu-title">HIGH SCORES</h2>
+                    <div class="high-scores">
+                        <ul class="scores-list" id="scores-list">
+                            <!-- Scores will be populated here -->
+                        </ul>
+                    </div>
+                    <button class="btn" id="back-btn">BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/tscript.js"></script>
+</body>
+
+</html>
